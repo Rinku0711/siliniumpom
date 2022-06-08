@@ -2,9 +2,6 @@ package org.example;
 
 import org.openqa.selenium.By;
 
-import static org.openqa.selenium.By.*;
-import static org.openqa.selenium.By.id;
-
 public class RagistrationPage extends Utils {
 
     private By _genderMale = By.id("gender-male");
@@ -19,49 +16,41 @@ public class RagistrationPage extends Utils {
     private By _registerbutton = By.id("register-button");
     private By _clickonhomepagepic = By.xpath("//img[@alt=\"nopCommerce demo store\"]");
 
+    LoadProp loadProp = new LoadProp();
+
 
     public void userEntersRagistrationDetails(){
 
-
-
         //  driver.findElement(By.id("gender-male")).click();
         clickOnElement(_genderMale);
-
-
-
+// properties
         // driver.findElement(By.xpath("//input[@name='FirstName']")).sendKeys("Charmy");
-        sendKeys(_firstname,"Charmy");
-
-
+        sendKeys(_firstname,loadProp.getProperty("firstName"));
 
         //enter last name
         //driver.findElement(By.id("LastName")).sendKeys("Patel");
-        sendKeys(_lastname, "Patel");
+        sendKeys(_lastname,loadProp.getProperty("lastName"));
 
         //Date of birth
-        selectDropdownByValue(_dateOfBirth, "2");
-
+        selectDropdownByValue(_dateOfBirth,loadProp.getProperty("Dateofbirth"));
 
         //Month of birth
-        selectDropdownByValue(_monthOfBirth, "9");
+        selectDropdownByValue(_monthOfBirth,loadProp.getProperty("Dateofmonth"));
 
         //Year of the birth
-        selectDropdownByValue(_yearOfBirth, "1980");
+        selectDropdownByValue(_yearOfBirth,loadProp.getProperty("Dateofyear"));
 
-
-        //EMAIL address
+        //Email address
         //driver.findElement(By.id("Email")).sendKeys("rinku07@gmail.com");
-        sendKeys(_emailaddress, "rinkup07" + randomDate() + "@gmail.com");
-
+        sendKeys(_emailaddress, loadProp.getProperty("Emailaddress1") + randomDate() + loadProp.getProperty("Emailaddress2"));
 
         //enter password
         // driver.findElement(By.id("Password")).sendKeys("12345678");
-        sendKeys(_enterpassword, "12345678");
-
+        sendKeys(_enterpassword, loadProp.getProperty("enterpassword"));
 
         //Confirm Password
         // driver.findElement(By.id("ConfirmPassword")).sendKeys("12345678");
-        sendKeys(_confirmpassword, "12345678");
+        sendKeys(_confirmpassword,loadProp.getProperty("ConfirmPassword") );
 
         //click on Register button on the button of the page
 

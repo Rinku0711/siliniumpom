@@ -1,7 +1,6 @@
 package org.example;
 
 import org.apache.commons.io.FileUtils;
-import org.example.BasePage;
 import org.jetbrains.annotations.NotNull;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
@@ -139,9 +138,6 @@ public class Utils extends BasePage {
     }
 
 
-    public static void typeText(By by, String text){
-        driver.findElement(by).sendKeys(text);
-    }
 
 }
 

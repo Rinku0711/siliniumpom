@@ -47,7 +47,8 @@ public class DriverManger extends Utils {
         driver.get("https://demo.nopcommerce.com/");
     }
     public void closeBrowser() {
-        driver.quit();
+
+        //driver.quit();
     }
 
 }

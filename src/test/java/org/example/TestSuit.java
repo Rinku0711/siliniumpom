@@ -1,5 +1,6 @@
 package org.example;
 
+import org.checkerframework.checker.units.qual.C;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
@@ -23,11 +24,15 @@ public class TestSuit extends BaseTest{
     Emailafriend emailafriend = new Emailafriend();
     Emailfriendresultfriend emailfriendresultfriend = new Emailfriendresultfriend();
     Registerpageformailfriend registerpageformailfriend = new Registerpageformailfriend();
+    Clickondesktop clickondesktop = new Clickondesktop();
+    Nopcommercenewrealease nopcommercenewrealease = new Nopcommercenewrealease();
+    Facebookpage facebookpage = new Facebookpage();
+    Nikeproduct nikeproduct = new Nikeproduct();
 
 
 
 
-    @Test
+    @Test(priority = 1)
 
     public void userShouldBeAbleToRegisterSuccessfully(){
 
@@ -39,7 +44,7 @@ public class TestSuit extends BaseTest{
 
     }
 
-    @Test
+    @Test(priority = 2)
 
         public void userShouldBeAbleToAddInAddToCartProduct(){
             homepage.clickOnComputer();
@@ -50,7 +55,7 @@ public class TestSuit extends BaseTest{
 
         }
 
-        @Test
+        @Test(priority = 3)
 
     public  void RegisterUerShouldReferproductToTheirFriends() {
 
@@ -65,27 +70,73 @@ public class TestSuit extends BaseTest{
     }
 
 
-       @Test
-     public void userShouldBeableToSuccesfullyChangethecurrency() {
 
-        homepage.clickoncurrency();
+    @Test(priority = 4)
+    public void ToBeVerifyregisteruserShouldBeAbleToVotForCommunityPoll() {
 
+        homepage.verifyIfNonRegisteredUserIsAbleToVote();
+        userShouldBeAbleToRegisterSuccessfully();
+        homepage.verifyRegisteredUserIsAbleToVote();
 
+    }
+
+    @Test(priority = 5)
+    public void Producttitles(){
+
+        homepage.getProductTitles();
+    }
+
+    @Test(priority = 6)
+    public void verifyusershouldbeabletoclickonvotebutton(){
+
+        homepage.clickonvote();
+
+    }
+
+    @Test(priority = 7)
+    public void verifyProductArrangeInAlphaBaticalOrder(){
+
+        homepage.clickOnComputer();
+        clickondesktop.clickOnDesktopPic();
+        blindonyourcomputer.arrangeztoaorder();
+
+    }
+
+    @Test(priority = 8)
+
+    public void facebookWindowhadle(){
+        homepage.windowHandle();
+
+    }
+
+    @Test(priority = 9)
+     public void verifyusershouldbeabletoleavecomment(){
+        homepage.newrealeasedetails();
+        nopcommercenewrealease.leaveyourcomment();
+    }
+
+    @Test(priority = 10)
+     public void facebookwindowhandle(){
+
+        homepage.clickonfacebook();
+        facebookpage.newopenfacebookwindow();
+    }
+
+    @Test(priority = 11)
+
+    public void uasershouldbeabletosearchnike(){
+
+        homepage.searchStore();
+        nikeproduct.searchnike();
+
+    }
 }
-@Test
-    public void userShoudbeabletoselectcommunitypoll(){
-
-        homepage.userabletovotecommunitypoll();
-       userShouldBeAbleToRegisterSuccessfully();
-       ragistrationPage.userclickonnopcommercepic();
-       homepage.userabletovotecommunitypoll();
-
-
-}
 
 
 
-}
+
+
+
 
 
 
