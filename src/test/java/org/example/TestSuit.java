@@ -19,11 +19,6 @@ public class TestSuit extends BaseTest{
     Blindonyourcomputer blindonyourcomputer = new Blindonyourcomputer();
     Bildoncomputer bildoncomputer = new Bildoncomputer();
     Productaddtocart productaddtocart = new Productaddtocart();
-    Clickondesktoppic clickondesktoppic = new Clickondesktoppic();
-    Clickonaddtocart clickonaddtocart = new Clickonaddtocart();
-    Emailafriend emailafriend = new Emailafriend();
-    Emailfriendresultfriend emailfriendresultfriend = new Emailfriendresultfriend();
-    Registerpageformailfriend registerpageformailfriend = new Registerpageformailfriend();
     Clickondesktop clickondesktop = new Clickondesktop();
     Nopcommercenewrealease nopcommercenewrealease = new Nopcommercenewrealease();
     Facebookpage facebookpage = new Facebookpage();
@@ -44,32 +39,23 @@ public class TestSuit extends BaseTest{
 
     }
 
-    @Test(priority = 2)
+   // @Test(priority = 2)
 
-        public void userShouldBeAbleToAddInAddToCartProduct(){
-            homepage.clickOnComputer();
-            homepage.usershoudabletoaddtocart();
-            blindonyourcomputer.clickOnBlindOnComputer();
-            bildoncomputer.openbildcomputer();
-            productaddtocart.ProductInShoppingCart();
+//        public void userShouldBeAbleToAddInAddToCartProduct(){
+//            homepage.clickOnComputer();
+//            homepage.usershoudabletoaddtocart();
+//            blindonyourcomputer.clickOnBlindOnComputer();
+//            bildoncomputer.openbildcomputer();
+//            productaddtocart.ProductInShoppingCart();
+//
+//        }
 
-        }
 
-        @Test(priority = 3)
+    @Test
+public void usershouldbeabletochangecurency(){
 
-    public  void RegisterUerShouldReferproductToTheirFriends() {
-
-        homepage.clickOnRegiterButton();
-       registerpageformailfriend.userabletosuccesfullregisterformailfriend();
-        homepage.clickOnComputer();
-        clickondesktoppic.clickdesktoppicture();
-        clickonaddtocart.clickondesktopaddtocart();
-        emailafriend.veryfytoemailafriend();
-        emailfriendresultfriend.emailsuccessfullysent();
-
+        homepage.clickoncurrency();
     }
-
-
 
     @Test(priority = 4)
     public void ToBeVerifyregisteruserShouldBeAbleToVotForCommunityPoll() {

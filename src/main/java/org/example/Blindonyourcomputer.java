@@ -25,7 +25,7 @@ public class Blindonyourcomputer extends Utils{
 
         Select select = new Select(driver.findElement(By.id("products-orderby")));
         select.selectByVisibleText("Name: Z to A");
-        List<WebElement> productList = driver.findElements(By.xpath("//div[@class='products-container']/descendant::a"));
+        List<WebElement> productList = driver.findElements(By.xpath("//div[@class=\"products-wrapper\"]/div/div"));
 
         for (WebElement element : productList) {
 

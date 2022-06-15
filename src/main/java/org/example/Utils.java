@@ -112,10 +112,9 @@ public class Utils extends BasePage {
 
     }
 
-   public  static void clickOnElement(@NotNull By by) {
-
-        by.findElement(driver).click();
-}
+    public static void clickOnElement(By by) {
+        driver.findElement(by).click();
+    }
 
 
 

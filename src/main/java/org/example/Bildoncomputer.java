@@ -14,7 +14,7 @@ public class Bildoncomputer extends Utils {
     private By _selectonacrobatreader = By.xpath("//label[@for=\"product_attribute_5_11\"] ");
     private By _seceltontotalcommander = By.xpath("//input[@value=\"12\"]");
     private By _clickonaddtocart = By.xpath("//button[@id=\"add-to-cart-button-1\"]");
-    private By _addtocart = By.xpath("//span[@class=\"cart-label\"]");
+    private By _addtocart =  By.xpath("//span[@class=\"cart-label\"]");
 
 
 
@@ -46,7 +46,9 @@ public class Bildoncomputer extends Utils {
         clickOnElement(_clickonaddtocart);
 
         // add to cart
-        clickOnElement(_addtocart);
+      //
+        //  clickOnElement(_addtocart);
+        driver.findElement(_addtocart).click();
 
 
     }

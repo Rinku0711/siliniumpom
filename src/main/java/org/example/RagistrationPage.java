@@ -54,15 +54,15 @@ public class RagistrationPage extends Utils {
 
         //click on Register button on the button of the page
 
-        //driver.findElement(By.id("register-button")).click();
-        click(_registerbutton);
+        driver.findElement(By.id("register-button")).click();
+       // click(_registerbutton);
 
     }
-   public void userclickonnopcommercepic(){
-        // click on homepagepic
-        clickOnElement(_clickonhomepagepic);
+//       public void userclickonnopcommercepic(){
+//           // click on homepagepic
+//           clickOnElement(_clickonhomepagepic);
 
 
    }
 
-}
+

@@ -6,7 +6,7 @@ import org.testng.annotations.BeforeMethod;
 
 public class BaseTest extends Utils {
 
-    DriverManger driverManger = new DriverManger();
+    DriverManager driverManger = new DriverManager();
 
     @BeforeMethod
     public void setup(){
