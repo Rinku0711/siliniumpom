@@ -9,6 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import java.io.File;
 import java.io.IOException;
@@ -58,12 +59,7 @@ public class Utils extends BasePage {
 
     }
 
-    public static void driverWaitUntilContainsUrl(int time, String url) {
 
-        WebDriverWait wait5 = new WebDriverWait(driver, Duration.ofSeconds(time));
-        wait5.until(ExpectedConditions.urlContains(url));
-
-    }
 
     public static void driverWaitUntilPresenceOfElement(By by, int time) {
         WebDriverWait wait6 = new WebDriverWait(driver, Duration.ofSeconds(time));
@@ -133,7 +129,10 @@ public class Utils extends BasePage {
             e.printStackTrace();
         }
 
+    }
 
+    public static void verifyCurrentUrl(String url){
+        Assert.assertEquals(driver.getCurrentUrl(),url);
     }
 
 

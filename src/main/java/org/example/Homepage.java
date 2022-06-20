@@ -15,21 +15,18 @@ public class Homepage extends Utils {
     private By _clickonregisterbutton = className("ico-register");
     private By _clickoncomputer = By.xpath("//ul[@class='top-menu notmobile']//a[text()='Computers ']");
     private By _clickondesktop = By.xpath("//img[@alt=\"Picture for category Desktops\"]");
-    private By _clickonhomeregisterbutton = By.className("[class=\"ico-register\"]");
+    private By _clickonhomeregisterbutton = By.xpath("//a[@class=\"ico-register\"]");
     private By _clickonradiobuttongood = By.id("pollanswers-2");
     private By _clickonvote = By.xpath("//button[@id=\"vote-poll-1\"]");
     private By clickongood2 = By.xpath("//input[@id=\"pollanswers-2\"]");
     private By _clickonvote2 = By.xpath("//*[@id=\"vote-poll-1\"]");
 
-    public void clickOnRegiterButton() {
+    public void clickregistertab() {
 
         // click on register button
 
         clickOnElement(_clickonregisterbutton);
-
-
     }
-
     public void clickOnComputer() {
 
         // click on computer
@@ -41,7 +38,6 @@ public class Homepage extends Utils {
         // click on desktop
         clickOnElement(_clickondesktop);
 
-
     }
 
     public void ckickonregisterbutton() {
@@ -51,7 +47,6 @@ public class Homepage extends Utils {
 
         //click on computer
         clickOnElement(By.xpath("//ul[@class='top-menu notmobile']//a[text()='Computers ']"));
-
 
     }
 
@@ -74,7 +69,6 @@ public class Homepage extends Utils {
         String actualMessage9 = "Euro";
         String expectedMessage9 = driver.findElement(By.xpath("//span [contains (text (),'€1032.00')]")).getText();
         Assert.assertTrue(expectedMessage9.contains("€"));
-
     }
 
 
@@ -130,9 +124,7 @@ public class Homepage extends Utils {
         System.out.println(textOnAlert);
         alert.getText();
         alert.accept();
-
-
-   }
+    }
 
    public void verifyProductArrangeInAlphaBaticalOrder(){
 
@@ -150,13 +142,11 @@ public class Homepage extends Utils {
 
         driver.getWindowHandle();
 
-
     }
 
     public void newrealeasedetails(){
         // click on details
         clickOnElement(By.xpath("//div [@class=\"buttons\"]//a[@href=\"/nopcommerce-new-release\"]"));
-
 
     }
 
@@ -164,12 +154,15 @@ public class Homepage extends Utils {
 
         // click on facebook
         clickOnElement(By.xpath("//a[@href=\"http://www.facebook.com/nopCommerce\"]"));
-
     }
 
     public void searchStore(){
         // click on searchstore
         clickOnElement(By.xpath("//div [@class=\"buttons\"]//a[@href=\"/nopcommerce-new-release\"]"));
+    }
+
+    public void clickOnCategoryLink(String categoryName){
+        clickOnElement(By.linkText(categoryName));
 
     }
 
